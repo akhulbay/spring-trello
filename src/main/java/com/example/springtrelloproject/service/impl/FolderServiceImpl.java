@@ -1,4 +1,4 @@
-package com.example.springtrelloproject.service;
+package com.example.springtrelloproject.service.impl;
 
 import com.example.springtrelloproject.dto.FolderCreateEditDto;
 import com.example.springtrelloproject.dto.FolderReadDto;
@@ -8,6 +8,7 @@ import com.example.springtrelloproject.model.Folder;
 import com.example.springtrelloproject.model.TaskCategory;
 import com.example.springtrelloproject.repository.FolderRepository;
 import com.example.springtrelloproject.repository.TaskCategoryRepository;
+import com.example.springtrelloproject.service.FolderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

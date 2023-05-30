@@ -11,6 +11,8 @@ public interface TaskService {
 
     TaskReadDto findById(Long id);
 
+    List<TaskReadDto> findByFolderId(Long folderId);
+
     TaskReadDto create(TaskCreateEditDto task);
 
     TaskReadDto update(Long id, TaskCreateEditDto task);

@@ -27,20 +27,20 @@ public class TaskController {
     public String findById(@PathVariable("id") Long id,
                            Model model) {
         model.addAttribute("task", taskService.findById(id));
-        return "";
+        return "task-details";
     }
 
     @PostMapping("/create")
     public String create(TaskCreateEditDto task) {
         taskService.create(task);
-        return "redirect:/";
+        return "redirect:/folders/" + task.getFolderId();
     }
 
     @PostMapping("/update/{id}")
     public String update(@PathVariable("id") Long id,
                          TaskCreateEditDto task) {
         taskService.update(id, task);
-        return "redirect:/";
+        return "redirect:/tasks/"+id;
     }
 
     @PostMapping("/delete/{id}")

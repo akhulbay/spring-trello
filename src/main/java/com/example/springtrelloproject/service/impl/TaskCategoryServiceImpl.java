@@ -1,10 +1,11 @@
-package com.example.springtrelloproject.service;
+package com.example.springtrelloproject.service.impl;
 
 import com.example.springtrelloproject.dto.TaskCategoryCreateEditDto;
 import com.example.springtrelloproject.dto.TaskCategoryReadDto;
 import com.example.springtrelloproject.mapper.TaskCategoryCreateEditMapper;
 import com.example.springtrelloproject.mapper.TaskCategoryReadMapper;
 import com.example.springtrelloproject.repository.TaskCategoryRepository;
+import com.example.springtrelloproject.service.TaskCategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

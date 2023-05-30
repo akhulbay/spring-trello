@@ -1,10 +1,11 @@
-package com.example.springtrelloproject.service;
+package com.example.springtrelloproject.service.impl;
 
 import com.example.springtrelloproject.dto.CommentCreateEditDto;
 import com.example.springtrelloproject.dto.CommentReadDto;
 import com.example.springtrelloproject.mapper.CommentCreateEditMapper;
 import com.example.springtrelloproject.mapper.CommentReadMapper;
 import com.example.springtrelloproject.repository.CommentRepository;
+import com.example.springtrelloproject.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

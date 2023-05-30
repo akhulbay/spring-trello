@@ -20,27 +20,27 @@ public class TaskCategoryController {
     @GetMapping
     public String findAll(Model model) {
         model.addAttribute("categories", taskCategoryService.findAll());
-        return "";
+        return "categories";
     }
 
     @GetMapping("/{id}")
     public String findById(@PathVariable("id") Long id,
                            Model model) {
         model.addAttribute("category", taskCategoryService.findById(id));
-        return "";
+        return "category-details";
     }
 
     @PostMapping("/create")
     public String create(TaskCategoryCreateEditDto taskCategory) {
         taskCategoryService.create(taskCategory);
-        return "redirect:/";
+        return "redirect:/categories";
     }
 
     @PostMapping("/update/{id}")
     public String update(@PathVariable("id") Long id,
                          TaskCategoryCreateEditDto taskCategory) {
         taskCategoryService.update(id, taskCategory);
-        return "redirect:/";
+        return "redirect:/categories/" + id;
     }
 
     @PostMapping("/delete/{id}")

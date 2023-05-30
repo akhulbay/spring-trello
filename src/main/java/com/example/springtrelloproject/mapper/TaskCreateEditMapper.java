@@ -13,6 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class TaskCreateEditMapper implements Mapper<TaskCreateEditDto, Task> {
 
+    private static final Integer DEFAULT_VALUE = 0;
     private final FolderRepository folderRepository;
 
     @Override
@@ -31,8 +32,12 @@ public class TaskCreateEditMapper implements Mapper<TaskCreateEditDto, Task> {
     private void copy(TaskCreateEditDto object, Task task) {
         task.setTitle(object.getTitle());
         task.setDescription(object.getDescription());
-        task.setStatus(object.getStatus());
+        task.setStatus(defineStatus(object.getStatus()));
         task.setFolder(getFolder(object.getFolderId()));
+    }
+
+    private Integer defineStatus(Integer status) {
+        return status == null ? DEFAULT_VALUE : status;
     }
 
     private Folder getFolder(Long folderId) {

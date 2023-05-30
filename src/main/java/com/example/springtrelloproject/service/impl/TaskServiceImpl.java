@@ -1,10 +1,11 @@
-package com.example.springtrelloproject.service;
+package com.example.springtrelloproject.service.impl;
 
 import com.example.springtrelloproject.dto.TaskCreateEditDto;
 import com.example.springtrelloproject.dto.TaskReadDto;
 import com.example.springtrelloproject.mapper.TaskCreateEditMapper;
 import com.example.springtrelloproject.mapper.TaskReadMapper;
 import com.example.springtrelloproject.repository.TaskRepository;
+import com.example.springtrelloproject.service.TaskService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +34,13 @@ public class TaskServiceImpl implements TaskService {
         return taskRepository.findById(id)
                 .map(taskReadMapper::map)
                 .orElseThrow();
+    }
+
+    @Override
+    public List<TaskReadDto> findByFolderId(Long folderId) {
+        return taskRepository.findByFolderId(folderId).stream()
+                .map(taskReadMapper::map)
+                .toList();
     }
 
     @Transactional
